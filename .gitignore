@@ -1,6 +1,6 @@
-.minecraft\logs\
-.minecraft\config\InvTweaks.cfg.bak
-.minecraft\config\InvTweaksRules.txt
-.minecraft\config\InvTweaksTree.txt
-.minecraft\config\InvTweaksTreeBackup.txt
+.minecraft/logs/
+.minecraft/config/InvTweaks.cfg.bak
+.minecraft/config/InvTweaksRules.txt
+.minecraft/config/InvTweaksTree.txt
+.minecraft/config/InvTweaksTreeBackup.txt
 .minecraft/mods/TheBetweenlands-3.8.1-universal.jar
