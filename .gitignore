@@ -1,0 +1,5 @@
+.minecraft\logs
+.minecraft\config\InvTweaks.cfg.bak
+.minecraft\config\InvTweaksRules.txt
+.minecraft\config\InvTweaksTree.txt
+.minecraft\config\InvTweaksTreeBackup.txt
