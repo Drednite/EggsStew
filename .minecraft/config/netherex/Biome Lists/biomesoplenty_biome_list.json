@@ -1,0 +1,25 @@
+{
+    "name": "Biomes O' Plenty Biome List",
+    "mods": [
+        {
+            "modId": "biomesoplenty",
+            "biomes": [
+                {
+                    "biomeId": "phantasmagoric_inferno",
+                    "weight": 1,
+                    "climateType": "hot"
+                },
+                {
+                    "biomeId": "undergarden",
+                    "weight": 2,
+                    "climateType": "cool"
+                },
+                {
+                    "biomeId": "visceral_heap",
+                    "weight": 1,
+                    "climateType": "cool"
+                }
+            ]
+        }
+    ]
+}
