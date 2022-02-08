@@ -1,0 +1,432 @@
+---- Minecraft Crash Report ----
+// Don't be sad, have a hug! <3
+
+Time: 2021-12-31 01:26:02 CST
+Description: Rendering item
+
+java.lang.NullPointerException: The validated object is null
+    at org.apache.commons.lang3.Validate.notNull(Validate.java:225)
+    at org.apache.commons.lang3.Validate.notNull(Validate.java:206)
+    at com.rwtema.extrautils2.backend.model.Textures.getModelResourceLocation(Textures.java:62)
+    at com.rwtema.extrautils2.backend.model.Textures$ItemMesher.getModelLocation(Textures.java:375)
+    at net.minecraft.client.renderer.ItemModelMesher.getItemModel(ItemModelMesher.java:52)
+    at net.minecraft.client.renderer.RenderItem.getItemModelWithOverrides(RenderItem.java:393)
+    at net.minecraft.client.renderer.RenderItem.renderItemAndEffectIntoGUI(RenderItem.java:559)
+    at mezz.jei.plugins.vanilla.ingredients.item.ItemStackRenderer.render(ItemStackRenderer.java:30)
+    at mezz.jei.plugins.vanilla.ingredients.item.ItemStackRenderer.render(ItemStackRenderer.java:23)
+    at mezz.jei.gui.ingredients.GuiIngredient.draw(GuiIngredient.java:169)
+    at mezz.jei.gui.ingredients.GuiIngredientGroup.draw(GuiIngredientGroup.java:157)
+    at mezz.jei.gui.recipes.RecipeLayout.drawRecipe(RecipeLayout.java:168)
+    at mezz.jei.gui.recipes.RecipesGui.drawScreen(RecipesGui.java:222)
+    at net.minecraftforge.client.ForgeHooksClient.drawScreen(ForgeHooksClient.java:396)
+    at sun.reflect.GeneratedMethodAccessor43.invoke(Unknown Source)
+    at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+    at java.lang.reflect.Method.invoke(Unknown Source)
+    at net.optifine.reflect.Reflector.callVoid(Reflector.java:669)
+    at net.minecraft.client.renderer.EntityRenderer.updateCameraAndRender(EntityRenderer.java:1462)
+    at net.minecraft.client.Minecraft.runGameLoop(Minecraft.java:1119)
+    at net.minecraft.client.Minecraft.run(Minecraft.java:3942)
+    at net.minecraft.client.main.Main.main(SourceFile:123)
+    at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+    at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+    at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+    at java.lang.reflect.Method.invoke(Unknown Source)
+    at net.minecraft.launchwrapper.Launch.launch(Launch.java:135)
+    at net.minecraft.launchwrapper.Launch.main(Launch.java:28)
+    at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+    at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+    at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+    at java.lang.reflect.Method.invoke(Unknown Source)
+    at org.multimc.onesix.OneSixLauncher.launchWithMainClass(OneSixLauncher.java:210)
+    at org.multimc.onesix.OneSixLauncher.launch(OneSixLauncher.java:245)
+    at org.multimc.EntryPoint.listen(EntryPoint.java:143)
+    at org.multimc.EntryPoint.main(EntryPoint.java:34)
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- Item being rendered --
+  Item Type: com.rwtema.extrautils2.backend.XUItemBlock@4cd8662c
+  Registry Name: extrautils2:compresseddirt
+  Item Aux: 0
+  Item NBT: null
+  Item Foil: false
+
+-- Ingredient being rendered --
+  Mod Name: Extra Utilities 2
+  Registry Name: extrautils2:compresseddirt
+  Display Name: Compressed Dirt
+  String Name: 1xtile.extrautils2:compresseddirt@0
+
+-- JEI render details --
+  Unique Id (for Blacklist): extrautils2:compresseddirt:0
+  Ingredient Type: class net.minecraft.item.ItemStack
+  Error Info: 1xtile.extrautils2:compresseddirt@0 extrautils2:compresseddirt
+  Filter Text: 
+  Edit Mode Enabled: false
+  Debug Mode Enabled: false
+
+-- Screen render details --
+  Screen name: mezz.jei.gui.recipes.RecipesGui
+  Mouse location: Scaled: (480, 269). Absolute: (960, 540)
+  Screen size: Scaled: (960, 540). Absolute: (1920, 1080). Scale factor of 2
+
+-- Affected level --
+  Level name: MpServer
+  All players: 1 total; [EntityPlayerSP['ScrambledEggs42'/180183, l='MpServer', x=-942.05, y=62.00, z=1983.30]]
+  Chunk stats: MultiplayerChunkCache: 441, 441
+  Level seed: 0
+  Level generator: ID 06 - BIOMESOP, ver 0. Features enabled: false
+  Level generator options: 
+  Level spawn location: World: (32,64,102), Chunk: (at 0,4,6 in 2,6; contains blocks 32,0,96 to 47,255,111), Region: (0,0; contains chunks 0,0 to 31,31, blocks 0,0,0 to 511,255,511)
+  Level time: 23746331 game time, 26707203 day time
+  Level dimension: 0
+  Level storage version: 0x00000 - Unknown?
+  Level weather: Rain time: 0 (now: false), thunder time: 0 (now: false)
+  Level game mode: Game mode: survival (ID 0). Hardcore: false. Cheats: false
+  Forced entities: 160 total; [EntityBat['Bat'/264200, l='MpServer', x=-927.35, y=51.10, z=2026.04], EntityArmorStand['Armor Stand'/180755, l='MpServer', x=-828.50, y=73.00, z=1890.50], EntityItemFrame['Item Frame'/180756, l='MpServer', x=-828.97, y=78.50, z=1893.50], EntityBat['Bat'/259608, l='MpServer', x=-934.46, y=58.10, z=1972.05], EntityRaven['Raven'/237606, l='MpServer', x=-906.50, y=50.00, z=2031.50], EntityPlayerSP['ScrambledEggs42'/180183, l='MpServer', x=-942.05, y=62.00, z=1983.30], EntityFireDragon['Fire Dragon'/180275, l='MpServer', x=-1023.88, y=29.00, z=1972.64], EntityRaven['Raven'/180273, l='MpServer', x=-965.50, y=11.00, z=1942.16], EntityRaven['Raven'/198710, l='MpServer', x=-863.69, y=11.00, z=1985.59], EntityScarecrow['Scarecrow'/224319, l='MpServer', x=-936.50, y=50.00, z=2018.38], EntityBat['Bat'/263745, l='MpServer', x=-951.46, y=40.64, z=2049.15], EntityRaven['Raven'/180298, l='MpServer', x=-990.52, y=79.00, z=2010.25], EntityRaven['Raven'/180299, l='MpServer', x=-998.79, y=74.05, z=2015.26], EntityRaven['Raven'/263767, l='MpServer', x=-1004.16, y=51.00, z=2060.50], EntityItem['item.item.mod_lavacow.cursed_fabric'/263788, l='MpServer', x=-890.35, y=18.00, z=1978.43], EntityRaven['Raven'/180335, l='MpServer', x=-988.45, y=43.00, z=1979.13], EntityRaven['Raven'/180339, l='MpServer', x=-980.50, y=70.00, z=2063.24], EntityRaven['Raven'/180337, l='MpServer', x=-984.25, y=38.00, z=2059.75], EntityRaven['Raven'/180342, l='MpServer', x=-983.75, y=36.00, z=2019.65], EntityRaven['Raven'/180343, l='MpServer', x=-984.53, y=36.00, z=2017.75], EntityRaven['Raven'/180340, l='MpServer', x=-982.25, y=13.55, z=2017.75], EntityRaven['Raven'/180341, l='MpServer', x=-980.55, y=36.00, z=2023.13], EntityRaven['Raven'/180346, l='MpServer', x=-975.67, y=24.00, z=2013.75], EntityRaven['Raven'/180347, l='MpServer', x=-983.50, y=37.00, z=2011.88], EntityRaven['Raven'/180344, l='MpServer', x=-963.25, y=10.64, z=2010.15], EntityBat['Bat'/264830, l='MpServer', x=-977.51, y=11.93, z=1931.47], EntityRaven['Raven'/180345, l='MpServer', x=-979.75, y=25.00, z=2013.75], EntityBat['Bat'/264831, l='MpServer', x=-889.49, y=24.41, z=1914.52], EntityRaven['Raven'/180350, l='MpServer', x=-985.13, y=42.00, z=1988.53], EntityRaven['Raven'/180351, l='MpServer', x=-987.51, y=34.00, z=1982.08], EntityBeetle['Beetle'/180348, l='MpServer', x=-991.52, y=73.00, z=2015.58], EntityRaven['Raven'/180349, l='MpServer', x=-986.45, y=34.00, z=1994.75], EntityBat['Bat'/264832, l='MpServer', x=-886.22, y=17.90, z=1916.55], EntityRaven['Raven'/180394, l='MpServer', x=-958.57, y=36.00, z=2043.67], EntityRaven['Raven'/180395, l='MpServer', x=-957.84, y=36.00, z=2042.58], EntityRaven['Raven'/180393, l='MpServer', x=-951.95, y=30.00, z=2043.69], EntityRaven['Raven'/180399, l='MpServer', x=-966.50, y=22.00, z=2035.62], EntityBat['Bat'/218286, l='MpServer', x=-952.14, y=44.10, z=1988.23], EntityRaven['Raven'/180396, l='MpServer', x=-949.45, y=41.00, z=2046.48], EntityBat['Bat'/219309, l='MpServer', x=-956.40, y=42.10, z=1997.80], EntityRaven['Raven'/180397, l='MpServer', x=-946.17, y=38.00, z=2038.28], EntityRaven['Raven'/180402, l='MpServer', x=-950.82, y=21.00, z=2028.16], EntityRaven['Raven'/180400, l='MpServer', x=-963.11, y=36.00, z=2034.14], EntityRaven['Raven'/180401, l='MpServer', x=-962.25, y=48.00, z=2036.25], EntityClam['Clam'/180406, l='MpServer', x=-975.50, y=2.00, z=1951.50], EntityGoat['Goat'/180407, l='MpServer', x=-973.50, y=121.88, z=1925.97], EntityArchaeologist['Archaeologist'/180405, l='MpServer', x=-945.86, y=18.00, z=1939.83], EntityRaven['Raven'/180414, l='MpServer', x=-952.84, y=24.00, z=2017.75], EntityRaven['Raven'/180415, l='MpServer', x=-948.67, y=19.00, z=2000.86], EntityRaven['Raven'/180412, l='MpServer', x=-959.75, y=11.00, z=2014.75], EntityRaven['Raven'/180413, l='MpServer', x=-956.51, y=18.00, z=2006.26], EntityRaven['Raven'/180418, l='MpServer', x=-967.98, y=36.00, z=2031.63], EntityRaven['Raven'/199363, l='MpServer', x=-920.50, y=55.00, z=1945.50], EntityRaven['Raven'/180419, l='MpServer', x=-969.57, y=37.00, z=2024.68], EntityRaven['Raven'/180416, l='MpServer', x=-958.30, y=18.00, z=2006.70], EntityRaven['Raven'/180417, l='MpServer', x=-962.75, y=24.00, z=2020.56], EntityRaven['Raven'/180422, l='MpServer', x=-968.44, y=55.00, z=2036.95], EntityRaven['Raven'/180423, l='MpServer', x=-963.70, y=10.51, z=2011.73], EntityRaven['Raven'/180420, l='MpServer', x=-981.73, y=36.00, z=2014.29], EntityRaven['Raven'/180421, l='MpServer', x=-973.75, y=38.00, z=2026.34], EntityEvilWizard['Wizard'/264899, l='MpServer', x=-1014.50, y=50.00, z=2018.50], EntityRaven['Raven'/180424, l='MpServer', x=-962.75, y=16.00, z=2009.73], EntityClam['Clam'/180425, l='MpServer', x=-946.50, y=4.00, z=1993.50], EntityOwl['Owl'/180430, l='MpServer', x=-955.42, y=77.00, z=1976.92], EntityRaven['Raven'/180431, l='MpServer', x=-929.64, y=25.00, z=1946.93], EntityRaven['Raven'/180428, l='MpServer', x=-943.40, y=51.00, z=1998.23], EntityRaven['Raven'/180429, l='MpServer', x=-928.17, y=42.00, z=1968.42], EntityClam['Clam'/180434, l='MpServer', x=-946.50, y=6.00, z=1953.50], EntityRaven['Raven'/199378, l='MpServer', x=-940.50, y=44.00, z=2041.50], EntityArchaeologist['Archaeologist'/180432, l='MpServer', x=-934.00, y=44.00, z=1944.00], EntityMimic['Mimicrab'/180433, l='MpServer', x=-930.50, y=44.00, z=1948.55], EntityBat['Bat'/263398, l='MpServer', x=-933.38, y=21.08, z=1906.37], EntityScarecrow['Scarecrow'/258801, l='MpServer', x=-958.60, y=40.00, z=1997.42], EntityRaven['Raven'/180494, l='MpServer', x=-940.71, y=43.00, z=2040.75], EntityBeetle['Beetle'/180495, l='MpServer', x=-935.42, y=66.00, z=2035.51], EntityRaven['Raven'/180492, l='MpServer', x=-931.43, y=43.00, z=2047.91], EntityBanshee['Banshee'/264970, l='MpServer', x=-959.45, y=28.67, z=1907.48], EntityRaven['Raven'/180493, l='MpServer', x=-930.25, y=36.00, z=2041.50], EntityScarecrow['Scarecrow'/180499, l='MpServer', x=-937.50, y=51.00, z=2007.50], EntityRaven['Raven'/180496, l='MpServer', x=-941.00, y=11.00, z=2026.75], EntityArchaeologist['Archaeologist'/180504, l='MpServer', x=-943.10, y=12.00, z=1920.35], EntityArchaeologist['Archaeologist'/180511, l='MpServer', x=-932.00, y=27.00, z=1958.00], EntityRaven['Raven'/180508, l='MpServer', x=-928.73, y=51.41, z=1980.02], EntityRaven['Raven'/180514, l='MpServer', x=-922.63, y=20.00, z=1940.25], EntityRaven['Raven'/180515, l='MpServer', x=-930.57, y=43.00, z=1951.13], EntityRaven['Raven'/180512, l='MpServer', x=-933.75, y=19.00, z=1953.43], EntityRaven['Raven'/180513, l='MpServer', x=-927.78, y=10.54, z=1946.37], EntityRaven['Raven'/180516, l='MpServer', x=-915.97, y=11.00, z=1934.61], EntityScarecrow['Scarecrow'/216869, l='MpServer', x=-940.50, y=51.00, z=2011.50], EntityRaven['Raven'/180517, l='MpServer', x=-919.49, y=46.00, z=1939.12], EntityRaven['Raven'/199977, l='MpServer', x=-1014.50, y=12.00, z=2041.50], EntityRaven['Raven'/59696, l='MpServer', x=-931.66, y=11.00, z=1999.75], EntityScarecrow['Scarecrow'/59698, l='MpServer', x=-935.50, y=54.00, z=1993.50], EntityFallenKnight['Fallen Knight'/265014, l='MpServer', x=-923.73, y=35.00, z=2046.51], EntityRaven['Raven'/59699, l='MpServer', x=-944.25, y=65.00, z=1991.50], EntityItemFrame['Item Frame'/59701, l='MpServer', x=-932.97, y=68.50, z=1989.50], EntityItemFrame['Item Frame'/59702, l='MpServer', x=-932.97, y=68.50, z=1988.50], EntityItemFrame['Item Frame'/59703, l='MpServer', x=-932.97, y=68.50, z=1987.50], EntityRaven['Raven'/243525, l='MpServer', x=-937.60, y=53.00, z=2059.02], EntityBat['Bat'/249177, l='MpServer', x=-943.45, y=50.10, z=2021.25], EntityBat['Bat'/210780, l='MpServer', x=-953.31, y=44.10, z=1987.54], EntityBat['Bat'/263003, l='MpServer', x=-959.09, y=36.18, z=2037.98], EntityScarecrow['Scarecrow'/248675, l='MpServer', x=-940.50, y=50.00, z=2018.50], EntityRaven['Raven'/180579, l='MpServer', x=-927.25, y=31.00, z=2047.75], EntityRaven['Raven'/180582, l='MpServer', x=-925.71, y=15.00, z=2005.13], EntityRaven['Raven'/205159, l='MpServer', x=-939.65, y=45.00, z=1973.01], EntityBat['Bat'/265058, l='MpServer', x=-880.72, y=42.91, z=2023.06], EntityRaven['Raven'/180581, l='MpServer', x=-912.41, y=24.00, z=2004.25], EntityLeashKnot['Lead'/60264, l='MpServer', x=-930.50, y=64.50, z=1989.50], EntityBat['Bat'/265072, l='MpServer', x=-1021.25, y=27.00, z=1930.75], EntityRaven['Raven'/180610, l='MpServer', x=-906.98, y=50.00, z=2033.62], EntityBat['Bat'/256386, l='MpServer', x=-967.64, y=43.10, z=2012.64], EntityRaven['Raven'/180614, l='MpServer', x=-896.86, y=35.00, z=2000.59], EntityRaven['Raven'/180615, l='MpServer', x=-896.25, y=30.00, z=1989.10], EntityRaven['Raven'/180612, l='MpServer', x=-898.14, y=30.00, z=2022.42], EntityRaven['Raven'/180613, l='MpServer', x=-908.80, y=50.00, z=2034.74], EntityBeetle['Beetle'/180616, l='MpServer', x=-896.18, y=67.26, z=1981.54], EntityBat['Bat'/264591, l='MpServer', x=-940.60, y=26.05, z=1946.33], EntityBat['Bat'/228239, l='MpServer', x=-949.30, y=44.10, z=1987.84], EntityRaven['Raven'/180623, l='MpServer', x=-898.55, y=28.00, z=1964.87], EntityRaven['Raven'/180626, l='MpServer', x=-911.07, y=10.62, z=1940.72], EntityRaven['Raven'/180627, l='MpServer', x=-906.32, y=15.00, z=1950.25], EntityRaven['Raven'/180624, l='MpServer', x=-907.46, y=26.00, z=1958.75], EntityRaven['Raven'/210321, l='MpServer', x=-931.36, y=11.00, z=1999.08], EntityRaven['Raven'/180625, l='MpServer', x=-907.53, y=12.00, z=1937.37], EntityBat['Bat'/228240, l='MpServer', x=-952.35, y=43.10, z=1995.86], EntityOwl['Owl'/180630, l='MpServer', x=-898.45, y=78.00, z=1937.56], EntityBat['Bat'/264592, l='MpServer', x=-969.75, y=28.10, z=1949.57], EntityOwl['Owl'/180631, l='MpServer', x=-898.85, y=78.00, z=1937.01], EntityBat['Bat'/264593, l='MpServer', x=-979.45, y=19.03, z=1922.54], EntityRaven['Raven'/180628, l='MpServer', x=-911.54, y=42.00, z=1938.12], EntityRaven['Raven'/180634, l='MpServer', x=-909.59, y=53.00, z=1926.75], EntityRaven['Raven'/180632, l='MpServer', x=-905.25, y=14.00, z=1931.32], EntityRaven['Raven'/180633, l='MpServer', x=-905.25, y=34.00, z=1923.53], EntityRaven['Raven'/180650, l='MpServer', x=-887.73, y=30.00, z=2021.39], EntityRaven['Raven'/180651, l='MpServer', x=-887.37, y=29.00, z=2029.35], EntityRaven['Raven'/180649, l='MpServer', x=-883.25, y=29.00, z=2027.24], EntityRaven['Raven'/180654, l='MpServer', x=-894.11, y=41.00, z=2001.99], EntityRaven['Raven'/198575, l='MpServer', x=-925.56, y=32.00, z=2002.44], EntityRaven['Raven'/180655, l='MpServer', x=-882.39, y=28.00, z=1996.90], EntityRaven['Raven'/180652, l='MpServer', x=-885.55, y=42.00, z=2021.47], EntityRaven['Raven'/180653, l='MpServer', x=-884.25, y=23.00, z=2010.70], EntityRaven['Raven'/180658, l='MpServer', x=-900.12, y=27.00, z=1973.60], EntityRaven['Raven'/180659, l='MpServer', x=-882.75, y=23.00, z=1979.50], EntityBeetle['Beetle'/180660, l='MpServer', x=-895.46, y=67.17, z=1980.65], EntityRaven['Raven'/180661, l='MpServer', x=-885.25, y=40.00, z=1953.40], EntityRaven['Raven'/180665, l='MpServer', x=-881.32, y=18.00, z=2052.25], EntityRaven['Raven'/180670, l='MpServer', x=-885.49, y=49.00, z=1933.43], EntityBeetle['Beetle'/180671, l='MpServer', x=-891.63, y=70.00, z=1928.38], EntityRaven['Raven'/180669, l='MpServer', x=-886.74, y=43.00, z=1941.25], EntityScarecrow['Scarecrow'/263652, l='MpServer', x=-1007.50, y=16.00, z=2054.50], EntityRaven['Raven'/180706, l='MpServer', x=-865.48, y=13.00, z=1974.15], EntityRaven['Raven'/180707, l='MpServer', x=-872.75, y=23.00, z=1946.63], EntityBat['Bat'/264167, l='MpServer', x=-934.44, y=54.10, z=1922.41], EntityRaven['Raven'/180711, l='MpServer', x=-878.75, y=17.00, z=2017.68], EntityFallenKnight['Fallen Knight'/263649, l='MpServer', x=-953.50, y=39.00, z=2046.73], EntityRaven['Raven'/180709, l='MpServer', x=-878.19, y=13.00, z=2054.54], EntityRaven['Raven'/180714, l='MpServer', x=-874.61, y=67.00, z=2011.28], EntityRaven['Raven'/180712, l='MpServer', x=-867.25, y=39.00, z=2017.00], EntityRaven['Raven'/180713, l='MpServer', x=-876.46, y=41.00, z=2021.05]]
+  Retry entities: 0 total; []
+  Server brand: fml,forge
+  Server type: Non-integrated multiplayer server
+
+-- System Details --
+  Minecraft Version: 1.12.2
+  Operating System: Windows 10 (amd64) version 10.0
+  Java Version: 1.8.0_311, Oracle Corporation
+  Java VM Version: Java HotSpot(TM) 64-Bit Server VM (mixed mode), Oracle Corporation
+  Memory: 3621660424 bytes (3453 MB) / 7488929792 bytes (7142 MB) up to 7488929792 bytes (7142 MB)
+  JVM Flags: 3 total; -XX:HeapDumpPath=MojangTricksIntelDriversForPerformance_javaw.exe_minecraft.exe.heapdump -Xms3060m -Xmx7200m
+  IntCache: cache: 0, tcache: 0, allocated: 0, tallocated: 0
+  FML: MCP 9.42 LoliASM 4.4 Powered by Forge 14.23.5.2855 Optifine OptiFine_1.12.2_HD_U_G5 200 mods loaded, 200 mods active
+       States: 'U' = Unloaded 'L' = Loaded 'C' = Constructed 'H' = Pre-initialized 'I' = Initialized 'J' = Post-initialized 'A' = Available 'D' = Disabled 'E' = Errored
+       
+       | State  | ID                                | Version                  | Source                                              | Signature                                |
+       |:------ |:--------------------------------- |:------------------------ |:--------------------------------------------------- |:---------------------------------------- |
+       | LCHIJA | minecraft                         | 1.12.2                   | minecraft.jar                                       | None                                     |
+       | LCHIJA | mcp                               | 9.42                     | minecraft.jar                                       | None                                     |
+       | LCHIJA | FML                               | 8.0.99.99                | forge-1.12.2-14.23.5.2855-universal.jar             | e3c3d50c7c986df74c645c0ac54639741c90a557 |
+       | LCHIJA | forge                             | 14.23.5.2855             | forge-1.12.2-14.23.5.2855-universal.jar             | e3c3d50c7c986df74c645c0ac54639741c90a557 |
+       | LCHIJA | creativecoredummy                 | 1.0.0                    | minecraft.jar                                       | None                                     |
+       | LCHIJA | entity_culling                    | 4.2.5                    | minecraft.jar                                       | None                                     |
+       | LCHIJA | ivtoolkit                         | 1.3.3-1.12               | minecraft.jar                                       | None                                     |
+       | LCHIJA | openmodscore                      | 0.12.2                   | minecraft.jar                                       | None                                     |
+       | LCHIJA | foamfixcore                       | 7.7.4                    | minecraft.jar                                       | None                                     |
+       | LCHIJA | srm-hooks                         | 1.12.2-1.0.0             | minecraft.jar                                       | None                                     |
+       | LCHIJA | randompatches                     | 1.12.2-1.22.1.10         | randompatches-1.12.2-1.22.1.10.jar                  | None                                     |
+       | LCHIJA | movillages                        | 1.5.4                    | [1.12]MoVillages-1.5.4.jar                          | None                                     |
+       | LCHIJA | additionalbanners                 | 1.1.77                   | AdditionalBanners-1.12.2-1.1.77.jar                 | d476d1b22b218a10d845928d1665d45fce301b27 |
+       | LCHIJA | aiimprovements                    | 0.0.1.3                  | AIImprovements-1.12-0.0.1b3.jar                     | None                                     |
+       | LCHIJA | airhop                            | 1.1.2                    | AirHop-v1.2-1.12.2.jar                              | None                                     |
+       | LCHIJA | akashictome                       | 1.2-12                   | AkashicTome-1.2-12.jar                              | None                                     |
+       | LCHIJA | creativecore                      | 1.10.0                   | CreativeCore_v1.10.69_mc1.12.2.jar                  | None                                     |
+       | LCHIJA | ambientsounds                     | 3.0                      | AmbientSounds_v3.1.7_mc1.12.2.jar                   | None                                     |
+       | LCHIJA | applecore                         | 3.4.0                    | AppleCore-mc1.12.2-3.4.0.jar                        | None                                     |
+       | LCHIJA | crafttweaker                      | 4.1.20                   | CraftTweaker2-1.12-4.1.20.670.jar                   | None                                     |
+       | LCHIJA | mtlib                             | 3.0.7                    | MTLib-3.0.7.jar                                     | None                                     |
+       | LCHIJA | modtweaker                        | 4.0.19                   | modtweaker-4.0.20.5.jar                             | None                                     |
+       | LCHIJA | jei                               | 4.16.1.302               | jei_1.12.2-4.16.1.302.jar                           | None                                     |
+       | LCHIJA | appleskin                         | 1.0.14                   | AppleSkin-mc1.12-1.0.14.jar                         | None                                     |
+       | LCHIJA | aroma1997core                     | 2.0.0.2.b167             | Aroma1997Core-1.12.2-2.0.0.2.b167.jar               | dfbfe4c473253d8c5652417689848f650b2cbe32 |
+       | LCHIJA | aroma1997sdimension               | 2.0.0.2.b97              | Aroma1997s-Dimensional-World-1.12.2-2.0.0.2.b97.jar | dfbfe4c473253d8c5652417689848f650b2cbe32 |
+       | LCHIJA | attributefix                      | 1.0.10                   | AttributeFix-1.12.2-1.0.10.jar                      | d476d1b22b218a10d845928d1665d45fce301b27 |
+       | LCHIJA | tombstone                         | 4.5.1                    | tombstone-4.5.1-1.12.2.jar                          | None                                     |
+       | LCHIJA | betteranimals                     | 5.5.0                    | betteranimals-1.12.2-5.5.0.jar                      | None                                     |
+       | LCHIJA | quark                             | r1.6-179                 | Quark-r1.6-179.jar                                  | None                                     |
+       | LCHIJA | autoreglib                        | 1.3-32                   | AutoRegLib-1.3-32.jar                               | None                                     |
+       | LCHIJA | badwithernocookiereloaded         | 1.12.2-3.4.18            | badwithernocookiereloaded-1.12.2-3.4.18.jar         | None                                     |
+       | LCHIJA | baubles                           | 1.5.2                    | Baubles-1.12-1.5.2.jar                              | None                                     |
+       | LCHIJA | baubleofundying                   | 1.0.1                    | BaubleOfUndying-1.12-1.0.1.jar                      | None                                     |
+       | LCHIJA | betteradvancements                | 0.1.0.77                 | BetterAdvancements-1.12.2-0.1.0.77.jar              | None                                     |
+       | LCHIJA | bettercaves                       | 1.12.2                   | bettercaves-1.12.2-2.0.4.jar                        | None                                     |
+       | LCHIJA | forgelin                          | 1.8.4                    | Forgelin-1.8.4.jar                                  | None                                     |
+       | LCHIJA | betterfoliage                     | 2.3.2                    | BetterFoliage-MC1.12-2.3.3.jar                      | None                                     |
+       | LCHIJA | bettermineshafts                  | 1.12.2-2.2.1             | BetterMineshaftsForge-1.12.2-2.2.1.jar              | None                                     |
+       | LCHIJA | bibliocraft                       | 2.4.5                    | BiblioCraft[v2.4.5][MC1.12.2].jar                   | None                                     |
+       | LCHIJA | biomesoplenty                     | 7.0.1.2444               | BiomesOPlenty-1.12.2-7.0.1.2444-universal.jar       | None                                     |
+       | LCHIJA | bookshelf                         | 2.3.590                  | Bookshelf-1.12.2-2.3.590.jar                        | d476d1b22b218a10d845928d1665d45fce301b27 |
+       | LCHIJA | bountiful                         | 2.2.2                    | Bountiful-2.2.2.jar                                 | None                                     |
+       | LCHIJA | bmtr                              | 0.4                      | BringMeTheRings-0.4.jar                             | None                                     |
+       | LCHIJA | cd4017be_lib                      | 6.5.1                    | CD4017BE_lib-1.12.2-6.5.1.jar                       | None                                     |
+       | LCHIJA | chameleon                         | 1.12-4.1.3               | Chameleon-1.12-4.1.3.jar                            | None                                     |
+       | LCHIJA | chunkpregenerator                 | 2.5.0                    | Chunk+Pregenerator-V1.12-2.5.1.jar                  | None                                     |
+       | LCHIJA | chunkanimator                     | 1.2                      | ChunkAnimator-MC1.12-1.2.jar                        | None                                     |
+       | LCHIJA | clumps                            | 3.1.2                    | Clumps-3.1.2.jar                                    | None                                     |
+       | LCHIJA | redstoneflux                      | 2.1.1                    | RedstoneFlux-1.12-2.1.1.1-universal.jar             | None                                     |
+       | LCHIJA | cofhcore                          | 4.6.6                    | CoFHCore-1.12.2-4.6.6.1-universal.jar               | None                                     |
+       | LCHIJA | cofhworld                         | 1.4.0                    | CoFHWorld-1.12.2-1.4.0.1-universal.jar              | None                                     |
+       | LCHIJA | collective                        | 3.0                      | collective-1.12.2-3.0.jar                           | None                                     |
+       | LCHIJA | mantle                            | 1.12-1.3.3.55            | Mantle-1.12-1.3.3.55.jar                            | None                                     |
+       | LCHIJA | roots                             | 1.12.2-3.1.4             | Roots-1.12.2-3.1.4.jar                              | None                                     |
+       | LCHIJA | mysticalworld                     | 1.12.2-1.11.0            | mysticalworld-1.12.2-1.11.0.jar                     | None                                     |
+       | LCHIJA | endercore                         | 1.12.2-0.5.76            | EnderCore-1.12.2-0.5.76.jar                         | None                                     |
+       | LCHIJA | thermalfoundation                 | 2.6.7                    | ThermalFoundation-1.12.2-2.6.7.1-universal.jar      | None                                     |
+       | LCHIJA | enderio                           | 5.3.70                   | EnderIO-1.12.2-5.3.70.jar                           | None                                     |
+       | LCHIJA | enderiointegrationtic             | 5.3.70                   | EnderIO-1.12.2-5.3.70.jar                           | None                                     |
+       | LCHIJA | tconstruct                        | 1.12.2-2.13.0.183        | TConstruct-1.12.2-2.13.0.183.jar                    | None                                     |
+       | LCHIJA | conarm                            | 1.2.5.10                 | conarm-1.12.2-1.2.5.10.jar                          | b33d2c8df492beff56d1bbbc92da49b8ab7345a1 |
+       | LCHIJA | controlling                       | 3.0.10                   | Controlling-3.0.10.jar                              | None                                     |
+       | LCHIJA | coralreef                         | 2.0                      | CoralReef-2.5-1.12.2.jar                            | None                                     |
+       | LCHIJA | craftingtweaks                    | 8.1.9                    | CraftingTweaks_1.12.2-8.1.9.jar                     | None                                     |
+       | LCHIJA | ctgui                             | 1.0.0                    | CraftTweaker2-1.12-4.1.20.670.jar                   | None                                     |
+       | LCHIJA | crafttweakerjei                   | 2.0.3                    | CraftTweaker2-1.12-4.1.20.670.jar                   | None                                     |
+       | LCHIJA | ctm                               | MC1.12.2-1.0.2.31        | CTM-MC1.12.2-1.0.2.31.jar                           | None                                     |
+       | LCHIJA | cucumber                          | 1.1.3                    | Cucumber-1.12.2-1.1.3.jar                           | None                                     |
+       | LCHIJA | curio                             | 1.0.4                    | Curio-1.0.4.jar                                     | None                                     |
+       | LCHIJA | defiledlands                      | 1.4.3                    | defiledlands-1.12.2-1.4.3.jar                       | None                                     |
+       | LCHIJA | dimdoors                          | 3.0.9+287                | DimensionalDoors-3.0.9-287.jar                      | None                                     |
+       | LCHIJA | sereneseasons                     | 1.2.18                   | SereneSeasons-1.12.2-1.2.18-universal.jar           | None                                     |
+       | LCHIJA | orelib                            | 3.6.0.1                  | OreLib-1.12.2-3.6.0.1.jar                           | 7a2128d395ad96ceb9d9030fbd41d035b435753a |
+       | LCHIJA | dsurround                         | @VERSION@                | DynamicSurroundings-1.12.2-3.6.3.jar                | None                                     |
+       | LCHIJA | reccomplex                        | 1.4.8.2                  | RecurrentComplex-1.4.8.2.jar                        | None                                     |
+       | LCHIJA | dynamictrees                      | 1.12.2-0.9.25            | DynamicTrees-1.12.2-0.9.25.jar                      | None                                     |
+       | LCHIJA | dynamictreesbop                   | 1.12.2-1.5.1             | DynamicTreesBOP-1.12.2-1.5.1.jar                    | None                                     |
+       | LCHIJA | dynamictreesdefiledlands          | 1.12.2-1.0.0             | dynamictreesdefiledlands-1.12.2-1.0.0.jar           | None                                     |
+       | LCHIJA | extrautils2                       | 1.0                      | extrautils2-1.12-1.9.9.jar                          | None                                     |
+       | LCHIJA | dynamictreesextrautils2           | 1.12.2-1.1.0             | DynamicTreesExtraUtils2-1.12.2-1.1.0.jar            | None                                     |
+       | LCHIJA | dynamictreesmysticalworld         | 1.12.2-1.0.1             | DynamicTreesMysticalWorld-1.12.2-1.0.1.jar          | None                                     |
+       | LCHIJA | dynamictreesquark                 | 1.12.2-1.0.6             | DynamicTreesQuark-1.12.2-1.0.6.jar                  | None                                     |
+       | LCHIJA | dynamictreestconstruct            | 1.12.2-1.2.7             | DynamicTreesTinkersConstruct-1.12.2-1.2.7.jar       | None                                     |
+       | LCHIJA | ebwizardry                        | 4.3.4                    | ElectroblobsWizardry-4.3.4-MC1.12.2.jar             | None                                     |
+       | LCHIJA | eplus                             | 5.0.176                  | EnchantingPlus-1.12.2-5.0.176.jar                   | d476d1b22b218a10d845928d1665d45fce301b27 |
+       | LCHIJA | enchdesc                          | 1.1.20                   | EnchantmentDescriptions-1.12.2-1.1.20.jar           | d476d1b22b218a10d845928d1665d45fce301b27 |
+       | LCHIJA | enderiobase                       | 5.3.70                   | EnderIO-1.12.2-5.3.70.jar                           | None                                     |
+       | LCHIJA | enderioconduits                   | 5.3.70                   | EnderIO-1.12.2-5.3.70.jar                           | None                                     |
+       | LCHIJA | enderioconduitsappliedenergistics | 5.3.70                   | EnderIO-1.12.2-5.3.70.jar                           | None                                     |
+       | LCHIJA | enderioconduitsopencomputers      | 5.3.70                   | EnderIO-1.12.2-5.3.70.jar                           | None                                     |
+       | LCHIJA | enderioconduitsrefinedstorage     | 5.3.70                   | EnderIO-1.12.2-5.3.70.jar                           | None                                     |
+       | LCHIJA | enderiointegrationforestry        | 5.3.70                   | EnderIO-1.12.2-5.3.70.jar                           | None                                     |
+       | LCHIJA | enderiointegrationticlate         | 5.3.70                   | EnderIO-1.12.2-5.3.70.jar                           | None                                     |
+       | LCHIJA | enderioinvpanel                   | 5.3.70                   | EnderIO-1.12.2-5.3.70.jar                           | None                                     |
+       | LCHIJA | ftblib                            | 5.4.7.2                  | FTBLib-5.4.7.2.jar                                  | None                                     |
+       | LCHIJA | enderiomachines                   | 5.3.70                   | EnderIO-1.12.2-5.3.70.jar                           | None                                     |
+       | LCHIJA | enderiopowertools                 | 5.3.70                   | EnderIO-1.12.2-5.3.70.jar                           | None                                     |
+       | LCHIJA | enderioendergy                    | 5.3.70                   | EnderIO-endergy-1.12.2-5.3.70.jar                   | None                                     |
+       | LCHIJA | enderiozoo                        | 5.3.70                   | EnderIO-zoo-1.12.2-5.3.70.jar                       | None                                     |
+       | LCHIJA | endreborn                         | 0.3.8                    | EndReborn+[0.3.9].jar                               | None                                     |
+       | LCHIJA | experiencebugfix                  | 1.0.0.0                  | ExperienceBugFix-1.12.2-1.0.0.0.jar                 | None                                     |
+       | LCHIJA | minerva                           | 1.0.13                   | minerva-library-1.0.13.jar                          | b851b8b7c7f4d8d0e910ff27618150ba80c026ec |
+       | LCHIJA | extraalchemy                      | 0.5.4                    | extraalchemy-forge-1.12-build11-0.5.4.jar           | b851b8b7c7f4d8d0e910ff27618150ba80c026ec |
+       | LCHIJA | fastfurnace                       | 1.3.1                    | FastFurnace-1.12.2-1.3.1.jar                        | None                                     |
+       | LCHIJA | fastbench                         | 1.7.3                    | FastWorkbench-1.12.2-1.7.3.jar                      | None                                     |
+       | LCHIJA | fencejumper                       | 1.0.5                    | fencejumper-1.12-1.0.5.jar                          | None                                     |
+       | LCHIJA | mod_lavacow                       | 1.3.1                    | Fish's+Undead+Rising-1.3.1.jar                      | None                                     |
+       | LCHIJA | foamfix                           | 0.10.14-1.12.2           | foamfix-0.10.14-1.12.2.jar                          | None                                     |
+       | LCHIJA | llibrary                          | 1.7.20                   | llibrary-1.7.20-1.12.2.jar                          | b9f30a813bee3b9dd5652c460310cfcd54f6b7ec |
+       | LCHIJA | fossil                            | 8.0.5                    | fossilsarcheology-8.0.5.jar                         | None                                     |
+       | LCHIJA | ftbbackups                        | 1.1.0.1                  | FTBBackups-1.1.0.1.jar                              | None                                     |
+       | LCHIJA | ftbutilities                      | 5.4.1.131                | FTBUtilities-5.4.1.131.jar                          | None                                     |
+       | LCHIJA | futuremc                          | 0.2.6                    | future-mc-1.12.2-0.2.7.4.jar                        | None                                     |
+       | LCHIJA | gottschcore                       | 1.14.1                   | GottschCore-mc1.12.2-f14.23.5.2854-v1.14.1.jar      | None                                     |
+       | LCHIJA | grassseeds                        | 1.4                      | grassseeds_1.12.2-1.4.jar                           | None                                     |
+       | LCHIJA | waila                             | 1.8.26                   | Hwyla-1.8.26-B41_1.12.2.jar                         | None                                     |
+       | LCHIJA | placebo                           | 1.6.0                    | Placebo-1.12.2-1.6.0.jar                            | None                                     |
+       | LCHIJA | hydrogel                          | 1.1.0                    | HydroGel-1.12.2-1.1.0.jar                           | None                                     |
+       | LCHIJA | iceandfire                        | 1.9.1                    | iceandfire-1.9.1-1.12.2.jar                         | None                                     |
+       | LCHIJA | inspirations                      | 1.12.2-0.2.9             | Inspirations-1.12.2-0.2.9.jar                       | None                                     |
+       | LCHIJA | inventorytweaks                   | 1.63+release.109.220f184 | InventoryTweaks-1.63.jar                            | 55d2cd4f5f0961410bf7b91ef6c6bf00a766dcbe |
+       | LCHIJA | journeymap                        | 1.12.2-5.7.1             | journeymap-1.12.2-5.7.1.jar                         | None                                     |
+       | LCHIJA | jeid                              | 1.0.3-55                 | JustEnoughIDs-1.0.3-55.jar                          | None                                     |
+       | LCHIJA | keywizard                         | 1.12.2-1.7.3             | keywizard-1.12.2-1.7.3.jar                          | None                                     |
+       | LCHIJA | libraryex                         | 1.2.2                    | LibraryEx-1.12.2-1.2.2.jar                          | None                                     |
+       | LCHIJA | mixinbooter                       | 2.0                      | mixinbooter-2.0.jar                                 | None                                     |
+       | LCHIJA | loliasm                           | 4.4                      | loliasm-4.4.jar                                     | None                                     |
+       | LCHIJA | malisiscore                       | 1.12.2-6.5.1-SNAPSHOT    | malisiscore-1.12.2-6.5.1.jar                        | None                                     |
+       | LCHIJA | malisisdoors                      | 1.12.2-7.3.0             | malisisdoors-1.12.2-7.3.0.jar                       | None                                     |
+       | LCHIJA | malisisswitches                   | 1.12.2-5.1.0             | malisisswitches-1.12.2-5.1.0.jar                    | None                                     |
+       | LCHIJA | mca                               | 6.1.0                    | MCA-1.12.2-6.1.0-universal.jar                      | None                                     |
+       | LCHIJA | mcjtylib_ng                       | 3.5.4                    | mcjtylib-1.12-3.5.4.jar                             | None                                     |
+       | LCHIJA | mcmultipart                       | 2.5.3                    | MCMultiPart-2.5.3.jar                               | None                                     |
+       | LCHIJA | mobbanners                        | 1.0.8                    | MobBanners-1.12.2-1.0.8.jar                         | d476d1b22b218a10d845928d1665d45fce301b27 |
+       | LCHIJA | moreoverlays                      | 1.15.1                   | moreoverlays-1.15.1-mc1.12.2.jar                    | None                                     |
+       | LCHIJA | mousetweaks                       | 2.10                     | MouseTweaks-2.10-mc1.12.2.jar                       | None                                     |
+       | LCHIJA | mowziesmobs                       | 1.5.8                    | mowziesmobs-1.5.8.jar                               | None                                     |
+       | LCHIJA | multithreadednoise                | 0.0.2                    | MultithreadedNoise-1.12.2-0.0.2.jar                 | None                                     |
+       | LCHIJA | mutantbeasts                      | 1.12.2-1.0.2             | MutantBeasts-1.12.2-1.0.2.jar                       | None                                     |
+       | LCHIJA | mysticalagriculture               | 1.7.5                    | MysticalAgriculture-1.12.2-1.7.5.jar                | None                                     |
+       | LCHIJA | netherex                          | 2.2.5                    | NetherEx-1.12.2-2.2.5.jar                           | None                                     |
+       | LCHIJA | netherportalfix                   | 5.3.17                   | NetherPortalFix_1.12.1-5.3.17.jar                   | None                                     |
+       | LCHIJA | yurtmod                           | 9.5.2                    | NomadicTents-1.12.2-9.5.2.jar                       | None                                     |
+       | LCHIJA | nmsot                             | 1.2.2-mc1.12.2           | NoMobSpawningOnTrees-1.2.2-mc1.12.2.jar             | None                                     |
+       | LCHIJA | omlib                             | 3.1.5-256                | omlib-1.12.2-3.1.5-256.jar                          | None                                     |
+       | LCHIJA | ompd                              | 3.1.1-76                 | ompd-1.12.2-3.1.1-76.jar                            | None                                     |
+       | LCHIJA | openmods                          | 0.12.2                   | OpenModsLib-1.12.2-0.12.2.jar                       | d2a9a8e8440196e26a268d1f3ddc01b2e9c572a5 |
+       | LCHIJA | openblocks                        | 1.8.1                    | OpenBlocks-1.12.2-1.8.1.jar                         | d2a9a8e8440196e26a268d1f3ddc01b2e9c572a5 |
+       | LCHIJA | openmodularturrets                | 3.1.14-382               | openmodularturrets-1.12.2-3.1.14-382.jar            | None                                     |
+       | LCHIJA | overpoweredarmorbar               | @VERSION@                | overloadedarmorbar-1.0.4g.jar                       | None                                     |
+       | LCHIJA | patchouli                         | 1.0-23.6                 | Patchouli-1.0-23.6.jar                              | None                                     |
+       | LCHIJA | pickletweaks                      | 2.1.3                    | PickleTweaks-1.12.2-2.1.3.jar                       | None                                     |
+       | LCHIJA | plants2                           | 2.10.7                   | Plants-1.12.2-2.10.7.jar                            | None                                     |
+       | LCHIJA | plustic                           | @VERSION@                | plustic-8.0.3.jar                                   | None                                     |
+       | LCHIJA | potioncore                        | 1.9_for_1.12.2           | PotionCore-1.9_for_1.12.2.jar                       | None                                     |
+       | LCHIJA | prefab                            | 1.3.1.4                  | prefab-1.3.1.4.jar                                  | None                                     |
+       | LCHIJA | progressivebosses                 | 1.5.4                    | ProgressiveBosses-1.5.4-mc1.12.x.jar                | None                                     |
+       | LCHIJA | randomtweaks                      | 1.12.2-2.8.3.1           | randomtweaks-1.12.2-2.8.3.1.jar                     | 20d08fb3fe9c268a63a75d337fb507464c8aaccd |
+       | LCHIJA | repurpose                         | 1.0.0.20                 | Repurpose-1.0.0.20.jar                              | None                                     |
+       | LCHIJA | roguelike                         | 2.4.1                    | RoguelikeDungeonsFnarEdition-1.12.2-2.4.1.jar       | None                                     |
+       | LCHIJA | savemystronghold                  | 1.12.2-1.0.0             | savemystronghold-1.12.2-1.0.0.jar                   | None                                     |
+       | LCHIJA | secretroomsmod                    | 5.6.4                    | secretroomsmod-1.12.2-5.6.4.jar                     | None                                     |
+       | LCHIJA | skylands                          | 1.5.5                    | skylands-1.5.5.jar                                  | None                                     |
+       | LCHIJA | sledgehammer                      | 1.12.2-2.0.13            | Sledgehammer-1.12.2-2.0.13.jar                      | 565fa4dbf20e7c3c4423950ca8e0bdabf7568796 |
+       | LCHIJA | snad                              | 1.12.1-1.7.09.16a        | Snad-1.12.1-1.7.09.16a.jar                          | None                                     |
+       | LCHIJA | snowrealmagic                     | 0.6.1                    | SnowRealMagic-1.12.2-0.6.1.jar                      | None                                     |
+       | LCHIJA | soundfilters                      | 0.12.1_for_1.12          | SoundFilters-0.12.1_for_1.12.jar                    | None                                     |
+       | LCHIJA | stg                               | 1.12.2-1.2.3             | stg-1.12.2-1.2.3.jar                                | None                                     |
+       | LCHIJA | storagedrawers                    | 5.2.2                    | StorageDrawers-1.12.2-5.4.2.jar                     | None                                     |
+       | LCHIJA | thebetweenlands                   | 3.8.1                    | TheBetweenlands-3.8.1-universal.jar                 | 38067d6878811efb38b6a045521cfd80b9b60b38 |
+       | LCHIJA | storagedrawersunlimited           | 1.12.2-1.3.0             | StorageDrawersUnlimited-1.12.2-1.3.0.jar            | None                                     |
+       | LCHIJA | sasit                             | 1.1.32                   | StuffASockInIt-1.12.2-1.1.32.jar                    | d476d1b22b218a10d845928d1665d45fce301b27 |
+       | LCHIJA | surge                             | 2.0.79                   | Surge-1.12.2-2.0.79.jar                             | d476d1b22b218a10d845928d1665d45fce301b27 |
+       | LCHIJA | tinkersjei                        | 1.2                      | tinkersjei-1.2.jar                                  | None                                     |
+       | LCHIJA | tinkersoredictcache               | 1.0                      | TinkersOreDictCache-1.0.jar                         | None                                     |
+       | LCHIJA | toastcontrol                      | 1.8.1                    | Toast+Control-1.12.2-1.8.1.jar                      | None                                     |
+       | LCHIJA | torchmaster                       | 1.8.5.0                  | torchmaster_1.12.2-1.8.5.0.jar                      | None                                     |
+       | LCHIJA | torchslabmod                      | v1.5.2                   | torchslabmod-1.12.2-v1.5.2.jar                      | None                                     |
+       | LCHIJA | travelersbackpack                 | 1.0.35                   | TravelersBackpack-1.12.2-1.0.35.jar                 | None                                     |
+       | LCHIJA | treasure2                         | 1.17.1                   | Treasure2-mc1.12.2-f14.23.5.2854-v1.17.1.jar        | None                                     |
+       | LCHIJA | uniquebase                        | 1.0.1                    | Unique+Enchantments+Base-1.12.2-1.1.1.jar           | None                                     |
+       | LCHIJA | uniqueebattle                     | 1.0.1                    | Unique+Enchantments+Battle-1.12.2-1.1.3.jar         | None                                     |
+       | LCHIJA | uniqueeutil                       | 1.0.1                    | Unique+Enchantments+Utils-1.12.2-1.5.0.jar          | None                                     |
+       | LCHIJA | uniquee                           | 2.0.1                    | Unique+Enchantments-1.12.2-2.1.3.jar                | None                                     |
+       | LCHIJA | vanillafix                        | 1.0.10-150               | VanillaFix-1.0.10-150.jar                           | None                                     |
+       | LCHIJA | vanillafoodpantry                 | 4.3.1                    | vanillafoodpantry-mc1.12.2-4.3.1.jar                | None                                     |
+       | LCHIJA | dimstack                          | 0.1.9                    | VerticallyStackedDimensions-1.12.2-0.1.9.jar        | None                                     |
+       | LCHIJA | wailaharvestability               | 1.1.12                   | WailaHarvestability-mc1.12-1.1.12.jar               | None                                     |
+       | LCHIJA | wanionlib                         | 1.12.2-2.5               | WanionLib-1.12.2-2.5.jar                            | None                                     |
+       | LCHIJA | wawla                             | 2.6.275                  | Wawla-1.12.2-2.6.275.jar                            | d476d1b22b218a10d845928d1665d45fce301b27 |
+       | LCHIJA | waystones                         | 4.1.0                    | Waystones_1.12.2-4.1.0.jar                          | None                                     |
+       | LCHIJA | witherskelefix                    | 2.6.3                    | WitherSkeletonTweaks-1.12.2-2.6.3.jar               | None                                     |
+       | LCHIJA | xnet                              | 1.8.2                    | xnet-1.12-1.8.2.jar                                 | None                                     |
+       | LCHIJA | recipehandler                     | 0.14                     | YARCF-0.14(1.12.2).jar                              | None                                     |
+       | LCHIJA | betteranimalsplus                 | 9.0.1                    | betteranimalsplus-1.12.2-9.0.1.jar                  | None                                     |
+       | LCHIJA | mospells                          | 1.0.2                    | MoSpells-1.12.2-1.0.2.jar                           | None                                     |
+       | LCHIJA | solcarrot                         | 1.8.4                    | solcarrot-1.12.2-1.8.4.jar                          | None                                     |
+       | LCHIJA | mysticallib                       | 1.12.2-1.13.0            | mysticallib-1.12.2-1.13.0.jar                       | None                                     |
+       | LCHIJA | unidict                           | 1.12.2-3.0.10            | UniDict-1.12.2-3.0.10.jar                           | None                                     |
+  Loaded coremods (and transformers): MixinBooter (mixinbooter-2.0.jar)
+                                        
+                                      Born in a Barn (Born+In+A+Barn+V1.8-1.12-1.1.jar)
+                                        com.chocohead.biab.BornInABarn
+                                      Quark Plugin (Quark-r1.6-179.jar)
+                                        vazkii.quark.base.asm.ClassTransformer
+                                      AppleCore (AppleCore-mc1.12.2-3.4.0.jar)
+                                        squeek.applecore.asm.TransformerModuleHandler
+                                      iceandfire (iceandfire-1.9.1-1.12.2.jar)
+                                        com.github.alexthe666.iceandfire.patcher.IceAndFireRuntimePatcher
+                                      EntityCullingPlugin (EntityCulling-1.12.2-4.2.5.jar)
+                                        meldexun.entityculling.asm.EntityCullingClassTransformer
+                                      UniDictCoreMod (UniDict-1.12.2-3.0.10.jar)
+                                        wanion.unidict.core.UniDictCoreModTransformer
+                                      Inventory Tweaks Coremod (InventoryTweaks-1.63.jar)
+                                        invtweaks.forge.asm.ContainerTransformer
+                                      FutureMC (future-mc-1.12.2-0.2.7.4.jar)
+                                        thedarkcolour.futuremc.asm.CoreTransformer
+                                      EnderCorePlugin (EnderCore-1.12.2-0.5.76-core.jar)
+                                        com.enderio.core.common.transform.EnderCoreTransformer
+                                        com.enderio.core.common.transform.SimpleMixinPatcher
+                                      BringMeTheRings plugin (BringMeTheRings-0.4.jar)
+                                        zabi.minecraft.bmtr.core.BaublesTransformer
+                                      JustEnoughIDs Extension Plugin (JustEnoughIDs-1.0.3-55.jar)
+                                        org.dimdev.jeid.JEIDTransformer
+                                      MalisisCorePlugin (malisiscore-1.12.2-6.5.1.jar)
+                                        
+                                      CoreMod (Aroma1997Core-1.12.2-2.0.0.2.b167.jar)
+                                        
+                                      IvToolkit (IvToolkit-1.3.3-1.12.jar)
+                                        
+                                      Vertically Stacked Dimensions ASM (VerticallyStackedDimensions-1.12.2-0.1.9.jar)
+                                        cd4017be.dimstack.asm.ChunkPrimerTransformer
+                                        cd4017be.dimstack.asm.BlockPortalTransformer
+                                      LoadingPlugin (ChunkAnimator-MC1.12-1.2.jar)
+                                        lumien.chunkanimator.asm.ClassTransformer
+                                      MalisisSwitchesPlugin (malisisswitches-1.12.2-5.1.0.jar)
+                                        
+                                      RandomPatches (randompatches-1.12.2-1.22.1.10.jar)
+                                        com.therandomlabs.randompatches.core.RPTransformer
+                                      SSLoadingPlugin (SereneSeasons-1.12.2-1.2.18-universal.jar)
+                                        sereneseasons.asm.transformer.EntityRendererTransformer
+                                        sereneseasons.asm.transformer.WorldTransformer
+                                      ForgelinPlugin (Forgelin-1.8.4.jar)
+                                        
+                                      Do not report to Forge! (If you haven't disabled the FoamFix coremod, try disabling it in the config! Note that this bit of text will still appear.) (foamfix-0.10.14-1.12.2.jar)
+                                        pl.asie.foamfix.coremod.FoamFixTransformer
+                                      OpenModsCorePlugin (OpenModsLib-1.12.2-0.12.2.jar)
+                                        openmods.core.OpenModsClassTransformer
+                                      TransformLoader (DynamicSurroundings-1.12.2-3.6.3.jar)
+                                        
+                                      CTMCorePlugin (CTM-MC1.12.2-1.0.2.31.jar)
+                                        team.chisel.ctm.client.asm.CTMTransformer
+                                      Snow! Real Magic! (SnowRealMagic-1.12.2-0.6.1.jar)
+                                        
+                                      SurgeLoadingPlugin (Surge-1.12.2-2.0.79.jar)
+                                        
+                                      llibrary (llibrary-core-1.0.11-1.12.2.jar)
+                                        net.ilexiconn.llibrary.server.core.plugin.LLibraryTransformer
+                                        net.ilexiconn.llibrary.server.core.patcher.LLibraryRuntimePatcher
+                                      TheBetweenlandsLoadingPlugin (TheBetweenlands-3.8.1-core.jar)
+                                        thebetweenlands.core.TheBetweenlandsClassTransformer
+                                      LoliASM (loliasm-4.4.jar)
+                                        
+                                      VanillaFixLoadingPlugin (VanillaFix-1.0.10-150.jar)
+                                        
+                                      CreativePatchingLoader (CreativeCore_v1.10.69_mc1.12.2.jar)
+                                        
+                                      SecretRoomsMod-Core (secretroomsmod-1.12.2-5.6.4.jar)
+                                        com.wynprice.secretroomsmod.core.SecretRoomsTransformer
+                                      BetterFoliageLoader (BetterFoliage-MC1.12-2.3.3.jar)
+                                        mods.betterfoliage.loader.BetterFoliageTransformer
+  GL info: ' Vendor: 'NVIDIA Corporation' Version: '4.6.0 NVIDIA 460.79' Renderer: 'GeForce RTX 2080 Ti/PCIe/SSE2'
+  OpenModsLib class transformers: [llama_null_fix:FINISHED],[horse_base_null_fix:FINISHED],[pre_world_render_hook:FINISHED],[player_render_hook:FINISHED],[horse_null_fix:FINISHED]
+  Ender IO: Found the following problem(s) with your installation (That does NOT mean that Ender IO caused the crash or was involved in it in any way. We add this information to help finding common problems, not as an invitation to post any crash you encounter to Ender IO's issue tracker. Always check the stack trace above to see which mod is most likely failing.):
+                              * Optifine is installed. This is NOT supported.
+                             This may (look up the meaning of 'may' in the dictionary if you're not sure what it means) have caused the error. Try reproducing the crash WITHOUT this/these mod(s) before reporting it.
+            Authlib is : /C:/Users/18593/Documents/folder%20holder/MultiMC/libraries/com/mojang/authlib/1.5.25/authlib-1.5.25.jar
+            
+            !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+            !!!You are looking at the diagnostics information, not at the crash.       !!!
+            !!!Scroll up until you see the line with '---- Minecraft Crash Report ----'!!!
+            !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+  Pulsar/tconstruct loaded Pulses: - TinkerCommons (Enabled/Forced)
+                                   - TinkerWorld (Enabled/Not Forced)
+                                   - TinkerTools (Enabled/Not Forced)
+                                   - TinkerHarvestTools (Enabled/Forced)
+                                   - TinkerMeleeWeapons (Enabled/Forced)
+                                   - TinkerRangedWeapons (Enabled/Forced)
+                                   - TinkerModifiers (Enabled/Forced)
+                                   - TinkerSmeltery (Enabled/Not Forced)
+                                   - TinkerGadgets (Enabled/Not Forced)
+                                   - TinkerOredict (Enabled/Forced)
+                                   - TinkerIntegration (Enabled/Forced)
+                                   - TinkerFluids (Enabled/Forced)
+                                   - TinkerMaterials (Enabled/Forced)
+                                   - TinkerModelRegister (Enabled/Forced)
+                                   - craftingtweaksIntegration (Enabled/Not Forced)
+                                   - wailaIntegration (Enabled/Not Forced)
+                                   - quarkIntegration (Enabled/Not Forced)
+  Pulsar/inspirations loaded Pulses: - InspirationsShared (Enabled/Forced)
+                                     - InspirationsBuilding (Enabled/Not Forced)
+                                     - InspirationsUtility (Enabled/Not Forced)
+                                     - InspirationsTools (Enabled/Not Forced)
+                                     - InspirationsRecipes (Enabled/Not Forced)
+                                     - InspirationsTweaks (Enabled/Not Forced)
+                                     - InspirationsShared (Enabled/Forced)
+                                     - WailaPlugin (Enabled/Not Forced)
+  Patchouli open book context: n/a
+  Suspected Mods: Extra Utilities 2 (extrautils2), Just Enough Items (jei)
+  Launched Version: MultiMC5
+  LWJGL: 2.9.4
+  OpenGL: GeForce RTX 2080 Ti/PCIe/SSE2 GL version 4.6.0 NVIDIA 460.79, NVIDIA Corporation
+  GL Caps: Using GL 1.3 multitexturing.
+           Using GL 1.3 texture combiners.
+           Using framebuffer objects because OpenGL 3.0 is supported and separate blending is supported.
+           Shaders are available because OpenGL 2.1 is supported.
+           VBOs are available because OpenGL 1.5 is supported.
+  Using VBOs: No
+  Is Modded: Definitely; Client brand changed to 'fml,forge'
+  Type: Client (map_client.txt)
+  Resource Packs: F32-1.12.2.zip, Lithos-Luminous+v14+for+1.12x.zip, Luminous1.12.2.zip, VanillaTweaks_r157891.zip, Diamond_Accurate_Colors.zip, Clean.and.Clear.Glass.1.12.2.zip, A+Little+Taste+of+Jerm+v2.0-1.12.2.zip, TC_Reskin_-_Battlesign_to_Round_Shield_1_0_0.zip
+  Current Language: English (US)
+  Profiler Position: N/A (disabled)
+  CPU: 16x AMD Ryzen 7 3700X 8-Core Processor
+  Client Crashes Since Restart: 1
+  Integrated Server Crashes Since Restart: 0

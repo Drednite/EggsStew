@@ -1,0 +1,137 @@
+{
+	"biome": "biomesoplenty:undergarden",
+	"generationWeight": 4,
+	"useDefaultDecorations": true,
+	"isSubBiome": false,
+	"blocks": {},
+	"entities": [
+		{
+			"spawnWeight": 50,
+			"minimumGroupCount": 4,
+			"maximumGroupCount": 4,
+			"entity": "minecraft:ghast"
+		}, 
+		{
+			"spawnWeight": 100,
+			"minimumGroupCount": 4,
+			"maximumGroupCount": 4,
+			"entity": "minecraft:zombie_pigman"
+		}, 
+		{
+			"spawnWeight": 2,
+			"minimumGroupCount": 4,
+			"maximumGroupCount": 4,
+			"entity": "minecraft:magma_cube"
+		}, 
+		{
+			"spawnWeight": 1,
+			"minimumGroupCount": 4,
+			"maximumGroupCount": 4,
+			"entity": "minecraft:enderman"
+		}, 
+		{
+			"spawnWeight": 15,
+			"minimumGroupCount": 2,
+			"maximumGroupCount": 4,
+			"entity": "dungeonmobs:dmnetherhound"
+		}, 
+		{
+			"spawnWeight": 10,
+			"minimumGroupCount": 1,
+			"maximumGroupCount": 2,
+			"entity": "dungeonmobs:dmthoqqua"
+		}, 
+		{
+			"spawnWeight": 2,
+			"minimumGroupCount": 1,
+			"maximumGroupCount": 1,
+			"entity": "dungeonmobs:dmfallenangel"
+		}, 
+		{
+			"spawnWeight": 8,
+			"minimumGroupCount": 1,
+			"maximumGroupCount": 3,
+			"entity": "mysticalworld:entity_hell_sprout"
+		}, 
+		{
+			"spawnWeight": 2,
+			"minimumGroupCount": 1,
+			"maximumGroupCount": 1,
+			"entity": "mysticalworld:entity_lava_cat"
+		}, 
+		{
+			"spawnWeight": 1,
+			"minimumGroupCount": 1,
+			"maximumGroupCount": 1,
+			"entity": "ebwizardry:lightning_wraith"
+		}, 
+		{
+			"spawnWeight": 3,
+			"minimumGroupCount": 1,
+			"maximumGroupCount": 1,
+			"entity": "ebwizardry:evil_wizard"
+		}, 
+		{
+			"spawnWeight": 15,
+			"minimumGroupCount": 4,
+			"maximumGroupCount": 8,
+			"entity": "mod_lavacow:salamander"
+		}, 
+		{
+			"spawnWeight": 1,
+			"minimumGroupCount": 1,
+			"maximumGroupCount": 1,
+			"entity": "w_tweaks:lady_evil_wizard"
+		}, 
+		{
+			"spawnWeight": 5,
+			"minimumGroupCount": 1,
+			"maximumGroupCount": 2,
+			"entity": "minecraft:blaze"
+		}, 
+		{
+			"spawnWeight": 4,
+			"minimumGroupCount": 1,
+			"maximumGroupCount": 2,
+			"entity": "quark:foxhound"
+		}, 
+		{
+			"spawnWeight": 60,
+			"minimumGroupCount": 4,
+			"maximumGroupCount": 6,
+			"entity": "quark:wraith"
+		}, 
+		{
+			"spawnWeight": 1,
+			"minimumGroupCount": 1,
+			"maximumGroupCount": 1,
+			"entity": "eerieentities:nether_knight"
+		}, 
+		{
+			"spawnWeight": 1,
+			"minimumGroupCount": 1,
+			"maximumGroupCount": 1,
+			"entity": "enderiozoo:voidslime"
+		}, 
+		{
+			"spawnWeight": 2,
+			"minimumGroupCount": 1,
+			"maximumGroupCount": 1,
+			"entity": "mowziesmobs:grottol"
+		}, 
+		{
+			"spawnWeight": 2,
+			"minimumGroupCount": 2,
+			"maximumGroupCount": 4,
+			"entity": "mysticalworld:entity_sprout"
+		}, 
+		{
+			"spawnWeight": 1,
+			"minimumGroupCount": 1,
+			"maximumGroupCount": 1,
+			"entity": "enderiozoo:epicsquid"
+		}
+	],
+	"traits": [],
+	"subBiomes": []
+}
